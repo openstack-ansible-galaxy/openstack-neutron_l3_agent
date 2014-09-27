@@ -55,3 +55,36 @@
       value:    True
   notify:
     - Restart neutron l3 agent
+
+- name: Configure metadata agent
+  ini_file: dest=/etc/neutron/metadata_agent.ini
+            section="{{ item.section }}"
+            option="{{ item.option }}"
+            value="{{ item.value }}"
+  with_items:
+    - section:  DEFAULT
+      option:   interface_driver
+      value:    neutron.agent.linux.interface.OVSInterfaceDriver
+    - section:  DEFAULT
+      option:   auth_url
+      value:    "{{ keystone_protocol }}://{{ keystone_hostname }}:{{ keystone_port }}/v2.0"
+    - section:  DEFAULT
+      option:   auth_region
+      value:    "{{ auth_region }}"
+    - section:  DEFAULT
+      option:   admin_tenant_name
+      value:    service
+    - section:  DEFAULT
+      option:   admin_user
+      value:    neutron
+    - section:  DEFAULT
+      option:   admin_password
+      value:    "{{ neutron_pass }}"
+    - section:  DEFAULT
+      option:   nova_metadata_ip
+      value:    "{{ nova_metadata_ip }}"
+    - section:  DEFAULT
+      option:   metadata_proxy_shared_secret
+      value:    "{{ metadata_secret }}"
+  notify:
+    - Restart neutron metadata agent
