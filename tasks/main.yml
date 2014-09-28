@@ -19,6 +19,8 @@
 
 - meta: flush_handlers
 
+- include: prerequisites.yml
+
 - include: packages.yml
 - include: configuration.yml
 
