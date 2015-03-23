@@ -1,4 +1,4 @@
-Neutron l3 agent
+Neutron L3 agent OpenStack Ansible Role
 =========
 
 OpenStack Neutron l3 agent installation
@@ -13,29 +13,18 @@ None.
 Role Variables
 --------------
 
-### Neutron (set by this role)
-
 | Name | Default value | Description | Note |
 |---   |---            |---          |---   |
 | `auth_region` | `regionOne` | Authentication region (keystone) ||
 | `external_interface` | `eth0` | External interface for instances network connectivity ||
 | `metadata_secret` | `metadata_secret_default` | Metadata shared secret (nova) ||
+| `neutron_user` | `neutron` | Neutron user as defined on Keystone ||
 | `neutron_pass` | `neutron_pass_default` | Neutron service user password ||
+| `neutron_tenant_name` | `service` | Neutron service tenant name ||
 | `nova_metadata_ip` | `localhost` | Nova metadata server host/IP address ||
-
-### Keystone (must exist)
-
-| Name | Default value | Description | Note |
-|---  |---  |---  |--- |
 | `keystone_hostname` | `localhost` | Hostname/IP address where the keystone service runs ||
 | `keystone_port` | `5000` | Keystone service port ||
 | `keystone_protocol` | `http` | Desired keystone protocol (http/https) ||
-
-
-### RabbitMQ (must exist)
-
-| Name | Default value | Description | Note |
-|---  |---  |---  |--- |
 | `rabbit_hostname` | `localhost` | Hostname/IP address where the RabbitMQ service runs ||
 | `rabbit_username` | `rabbit_username_default` | RabbitMQ username for glance ||
 | `rabbit_pass` | `rabbit_pass_default` | RabbitMQ password for glance. ||

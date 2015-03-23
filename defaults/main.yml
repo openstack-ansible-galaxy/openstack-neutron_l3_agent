@@ -21,7 +21,9 @@
 auth_region: regionOne
 external_interface: eth0
 metadata_secret: metadata_secret_default
+neutron_user: neutron
 neutron_pass: neutron_pass_default
+neutron_tenant_name: service
 nova_metadata_ip: localhost
 
 # Keystone

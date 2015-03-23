@@ -17,7 +17,7 @@
 # limitations under the License.
 #
 
-- name: Install neutron openvswitch agent plugin
+- name: Install Neutron openvswitch agent plugin
   apt: name="{{ item }}" state=present
   with_items:
     - openvswitch-datapath-dkms
