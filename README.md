@@ -1,7 +1,12 @@
 Neutron L3 agent OpenStack Ansible Role
 =========
 
-OpenStack Neutron l3 agent installation
+**Status**
+* [![Build Status](https://travis-ci.org/dguerri/openstack-neutron_l3_agent.svg?branch=master)](https://travis-ci.org/dguerri/openstack-neutron_l3_agent) on master branch
+* [![Build Status](https://travis-ci.org/dguerri/openstack-neutron_l3_agent.svg?branch=development)](https://travis-ci.org/dguerri/openstack-neutron_l3_agent) on development branch
+* [![Ansible Galaxy](http://img.shields.io/badge/dguerri-openstack--neutron_l3_agent-blue.svg)](https://galaxy.ansible.com/list#/roles/1832) on Ansible Galaxy
+
+OpenStack Neutron L3 agent installation
 
 _Tested on Ubuntu Precise (12.04) and Trusty (14.04)_
 
