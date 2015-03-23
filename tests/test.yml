@@ -1,0 +1,21 @@
+---
+
+- hosts: localhost
+  remote_user: root
+  roles:
+    - role: openstack-neutron_l3_agent
+      auth_region: regionOne
+      external_interface: eth0
+      metadata_secret: metadata_secret_default
+      neutron_user: neutron
+      neutron_pass: neutron_pass_default
+      neutron_tenant_name: service
+      nova_metadata_ip: localhost
+      keystone_hostname: localhost
+      keystone_port: 5000
+      keystone_protocol: http
+      rabbit_hostname: 127.0.0.1
+      rabbit_username: "guest"
+      rabbit_pass: "guest"
+      tags:
+        - neutron-l3-agent

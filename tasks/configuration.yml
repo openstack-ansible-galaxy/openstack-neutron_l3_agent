@@ -17,7 +17,7 @@
 # limitations under the License.
 #
 
-- name: Configure neutron
+- name: Configure Neutron
   ini_file: dest=/etc/neutron/neutron.conf
             section="{{ item.section }}"
             option="{{ item.option }}"
@@ -39,9 +39,9 @@
       option:   rabbit_password
       value:    "{{ rabbit_pass }}"
   notify:
-    - Restart neutron l3 agent
+    - Restart Neutron L3 agent
 
-- name: Configure l3 agent
+- name: Configure L3 agent
   ini_file: dest=/etc/neutron/l3_agent.ini
             section="{{ item.section }}"
             option="{{ item.option }}"
@@ -54,7 +54,7 @@
       option:   use_namespaces
       value:    True
   notify:
-    - Restart neutron l3 agent
+    - Restart Neutron L3 agent
 
 - name: Configure metadata agent
   ini_file: dest=/etc/neutron/metadata_agent.ini
@@ -73,10 +73,10 @@
       value:    "{{ auth_region }}"
     - section:  DEFAULT
       option:   admin_tenant_name
-      value:    service
+      value:    "{{ neutron_tenant_name }}"
     - section:  DEFAULT
       option:   admin_user
-      value:    neutron
+      value:    "{{ neutron_user }}"
     - section:  DEFAULT
       option:   admin_password
       value:    "{{ neutron_pass }}"
@@ -87,4 +87,4 @@
       option:   metadata_proxy_shared_secret
       value:    "{{ metadata_secret }}"
   notify:
-    - Restart neutron metadata agent
+    - Restart Neutron metadata agent

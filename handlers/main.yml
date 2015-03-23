@@ -17,8 +17,8 @@
 # limitations under the License.
 #
 
-- name: Restart neutron l3 agent
+- name: Restart Neutron L3 agent
   service: name=neutron-l3-agent state=restarted
 
-- name: Restart neutron metadata agent
+- name: Restart Neutron metadata agent
   service: name=neutron-metadata-agent state=restarted
